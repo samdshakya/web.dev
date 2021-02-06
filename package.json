@@ -33,7 +33,7 @@
     "stage": "ELEVENTY_ENV=prod npm run build && gcloud app deploy --project web-dev-staging --quiet",
     "start": "node ./server.js",
     "test:integration": "mocha ./test/integration",
-    "test:lib": "npm-run-all clean rollup karma",
+    "test:lib": "NODE_ENV=test npm-run-all clean rollup karma",
     "test:unit": "mocha ./test/unit && npm run test:lib",
     "test": "npm run test:unit && npm run test:lib && npm run test:integration",
     "translated": "node ./tools/update-translated/index.js",
